@@ -31,8 +31,10 @@ namespace Willie.AppForms
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +48,11 @@ namespace Willie.AppForms
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.Controls.Add(this.label1);
-            this.splitContainer.Size = new System.Drawing.Size(570, 450);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.flowLayoutPanel);
+            this.splitContainer.Size = new System.Drawing.Size(580, 450);
             this.splitContainer.SplitterDistance = 48;
             this.splitContainer.TabIndex = 0;
             // 
@@ -60,17 +66,29 @@ namespace Willie.AppForms
             this.label1.TabIndex = 0;
             this.label1.Text = "СПИСОК СТУДЕНТОВ";
             // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(580, 398);
+            this.flowLayoutPanel.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 450);
+            this.ClientSize = new System.Drawing.Size(580, 450);
             this.Controls.Add(this.splitContainer);
-            this.MinimumSize = new System.Drawing.Size(586, 489);
+            this.MinimumSize = new System.Drawing.Size(596, 489);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
+            this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -81,5 +99,6 @@ namespace Willie.AppForms
 
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

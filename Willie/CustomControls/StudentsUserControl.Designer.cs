@@ -1,5 +1,5 @@
 ﻿
-namespace Willie.UserControls
+namespace Willie.CustomControls
 {
     partial class StudentsUserControl
     {
@@ -126,6 +126,7 @@ namespace Willie.UserControls
             this.Controls.Add(this.dateBirthLabel);
             this.Controls.Add(this.fullNameLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "StudentsUserControl";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Size = new System.Drawing.Size(536, 148);
