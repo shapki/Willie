@@ -30,12 +30,15 @@ namespace Willie.AppForms
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.addStudentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer
@@ -47,7 +50,10 @@ namespace Willie.AppForms
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.label1);
+            this.splitContainer.Panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.splitContainer.Panel1.Controls.Add(this.addStudentButton);
+            this.splitContainer.Panel1.Controls.Add(this.logoPictureBox);
+            this.splitContainer.Panel1.Controls.Add(this.titleLabel);
             // 
             // splitContainer.Panel2
             // 
@@ -56,15 +62,26 @@ namespace Willie.AppForms
             this.splitContainer.SplitterDistance = 48;
             this.splitContainer.TabIndex = 0;
             // 
-            // label1
+            // logoPictureBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "СПИСОК СТУДЕНТОВ";
+            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.logoPictureBox.Image = global::Willie.Properties.Resources.icon1;
+            this.logoPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(51, 48);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPictureBox.TabIndex = 2;
+            this.logoPictureBox.TabStop = false;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleLabel.Location = new System.Drawing.Point(57, 11);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(233, 25);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "СПИСОК СТУДЕНТОВ";
             // 
             // flowLayoutPanel
             // 
@@ -76,21 +93,33 @@ namespace Willie.AppForms
             this.flowLayoutPanel.Size = new System.Drawing.Size(580, 398);
             this.flowLayoutPanel.TabIndex = 0;
             // 
+            // addStudentButton
+            // 
+            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(211)))));
+            this.addStudentButton.Location = new System.Drawing.Point(310, 3);
+            this.addStudentButton.Name = "addStudentButton";
+            this.addStudentButton.Size = new System.Drawing.Size(75, 37);
+            this.addStudentButton.TabIndex = 3;
+            this.addStudentButton.Text = "Добавить студента";
+            this.addStudentButton.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 450);
             this.Controls.Add(this.splitContainer);
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MinimumSize = new System.Drawing.Size(596, 489);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "ВИЛЛИ | СПИСОК СТУДЕНТОВ";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -98,7 +127,9 @@ namespace Willie.AppForms
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.Button addStudentButton;
     }
 }
