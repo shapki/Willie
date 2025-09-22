@@ -1,20 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Willie.Models;
 
 namespace Willie.AppForms
 {
-    public partial class CreateUpdateStudent : Form
+    public partial class CreateUpdateStudentForm : Form
     {
-        public CreateUpdateStudent()
+        private students _student;
+        public CreateUpdateStudentForm()
         {
             InitializeComponent();
+            titleLabel.Text = "ДОБАВЛЕНИЕ СТУДЕНТА";
+            this.Text = "ВИЛЛИ | ДОБАВЛЕНИЕ СТУДЕНТА";
+        }
+
+        public CreateUpdateStudentForm(students student)
+        {
+            _student = student;
+            InitializeComponent();
+            titleLabel.Text = "ИЗМЕНЕНИЕ СТУДЕНТА";
+            this.Text = "ВИЛЛИ | ИЗМЕНЕНИЕ | " + _student.fullName;
         }
 
         private void CreateUpdateStudent_Load(object sender, EventArgs e)
@@ -24,6 +29,10 @@ namespace Willie.AppForms
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet.students". При необходимости она может быть перемещена или удалена.
             this.studentsTableAdapter.Fill(this.shapkin_06_WillieDataSet.students);
 
+            if (!_student.isNew())
+            {
+                studentsBindingSource.DataSource = _student;
+            }
         }
     }
 }

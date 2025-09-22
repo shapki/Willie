@@ -58,11 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppForms\CreateUpdateStudent.cs">
+    <Compile Include="AppForms\CreateUpdateStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppForms\CreateUpdateStudent.Designer.cs">
-      <DependentUpon>CreateUpdateStudent.cs</DependentUpon>
+    <Compile Include="AppForms\CreateUpdateStudentForm.Designer.cs">
+      <DependentUpon>CreateUpdateStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\MainForm.cs">
       <SubType>Form</SubType>
@@ -90,8 +90,8 @@
     <Compile Include="CustomControls\StudentsUserControl.Designer.cs">
       <DependentUpon>StudentsUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AppForms\CreateUpdateStudent.resx">
-      <DependentUpon>CreateUpdateStudent.cs</DependentUpon>
+    <EmbeddedResource Include="AppForms\CreateUpdateStudentForm.resx">
+      <DependentUpon>CreateUpdateStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

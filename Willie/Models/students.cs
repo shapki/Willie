@@ -37,5 +37,10 @@ namespace Willie.Models
         public virtual dominantHand dominantHand { get; set; }
 
         public virtual gender gender { get; set; }
+
+        public bool isNew()
+        {
+            return idStudent == 0;
+        }
     }
 }

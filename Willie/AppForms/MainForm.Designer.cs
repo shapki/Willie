@@ -30,10 +30,10 @@ namespace Willie.AppForms
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.addStudentButton = new System.Windows.Forms.Button();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.addStudentButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -61,6 +61,17 @@ namespace Willie.AppForms
             this.splitContainer.Size = new System.Drawing.Size(580, 450);
             this.splitContainer.SplitterDistance = 48;
             this.splitContainer.TabIndex = 0;
+            // 
+            // addStudentButton
+            // 
+            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(211)))));
+            this.addStudentButton.Location = new System.Drawing.Point(310, 3);
+            this.addStudentButton.Name = "addStudentButton";
+            this.addStudentButton.Size = new System.Drawing.Size(75, 37);
+            this.addStudentButton.TabIndex = 3;
+            this.addStudentButton.Text = "Добавить студента";
+            this.addStudentButton.UseVisualStyleBackColor = false;
+            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
             // logoPictureBox
             // 
@@ -92,16 +103,6 @@ namespace Willie.AppForms
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Size = new System.Drawing.Size(580, 398);
             this.flowLayoutPanel.TabIndex = 0;
-            // 
-            // addStudentButton
-            // 
-            this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(211)))));
-            this.addStudentButton.Location = new System.Drawing.Point(310, 3);
-            this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(75, 37);
-            this.addStudentButton.TabIndex = 3;
-            this.addStudentButton.Text = "Добавить студента";
-            this.addStudentButton.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 

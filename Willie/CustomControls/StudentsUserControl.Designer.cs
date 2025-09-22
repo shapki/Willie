@@ -43,6 +43,7 @@ namespace Willie.CustomControls
             this.fullNameLabel.Size = new System.Drawing.Size(161, 25);
             this.fullNameLabel.TabIndex = 0;
             this.fullNameLabel.Text = "Имя Фамилия";
+            this.fullNameLabel.Click += new System.EventHandler(this.fullNameLabel_Click);
             // 
             // dateWillie
             // 
@@ -52,6 +53,7 @@ namespace Willie.CustomControls
             this.dateWillie.TabIndex = 1;
             this.dateWillie.Text = "Вилли:";
             this.dateWillie.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.dateWillie.Click += new System.EventHandler(this.dateWillie_Click);
             // 
             // numcardLabel
             // 
@@ -61,6 +63,7 @@ namespace Willie.CustomControls
             this.numcardLabel.Size = new System.Drawing.Size(89, 13);
             this.numcardLabel.TabIndex = 4;
             this.numcardLabel.Text = "Карта ученика:";
+            this.numcardLabel.Click += new System.EventHandler(this.numcardLabel_Click);
             // 
             // StudentsUserControl
             // 
@@ -75,6 +78,7 @@ namespace Willie.CustomControls
             this.Name = "StudentsUserControl";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Size = new System.Drawing.Size(536, 79);
+            this.Click += new System.EventHandler(this.StudentsUserControl_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
