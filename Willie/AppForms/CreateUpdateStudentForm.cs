@@ -34,5 +34,15 @@ namespace Willie.AppForms
                 studentsBindingSource.DataSource = _student;
             }
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            FillModelFields();
+        }
+
+        private void FillModelFields()
+        {
+            
+        }
     }
 }

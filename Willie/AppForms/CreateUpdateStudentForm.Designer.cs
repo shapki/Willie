@@ -262,6 +262,7 @@ namespace Willie.AppForms
             // dominantHandIdComboBox
             // 
             this.dominantHandIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "DominantHandId", true));
+            this.dominantHandIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dominantHandIdComboBox.FormattingEnabled = true;
             this.dominantHandIdComboBox.Location = new System.Drawing.Point(135, 168);
             this.dominantHandIdComboBox.Name = "dominantHandIdComboBox";
@@ -271,6 +272,7 @@ namespace Willie.AppForms
             // genderIdComboBox
             // 
             this.genderIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "genderId", true));
+            this.genderIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderIdComboBox.FormattingEnabled = true;
             this.genderIdComboBox.Location = new System.Drawing.Point(135, 195);
             this.genderIdComboBox.Name = "genderIdComboBox";
@@ -286,6 +288,7 @@ namespace Willie.AppForms
             this.saveButton.TabIndex = 16;
             this.saveButton.Text = "Сохранить";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // studentsTableAdapter
             // 
