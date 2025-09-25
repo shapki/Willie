@@ -32,6 +32,7 @@ namespace Willie.CustomControls
             this.fullNameLabel = new System.Windows.Forms.Label();
             this.dateWillie = new System.Windows.Forms.Label();
             this.numcardLabel = new System.Windows.Forms.Label();
+            this.trainingHistoryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fullNameLabel
@@ -65,11 +66,25 @@ namespace Willie.CustomControls
             this.numcardLabel.Text = "Карта ученика:";
             this.numcardLabel.Click += new System.EventHandler(this.numcardLabel_Click);
             // 
+            // trainingHistoryButton
+            // 
+            this.trainingHistoryButton.BackColor = System.Drawing.Color.Red;
+            this.trainingHistoryButton.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.trainingHistoryButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.trainingHistoryButton.Location = new System.Drawing.Point(445, 31);
+            this.trainingHistoryButton.Name = "trainingHistoryButton";
+            this.trainingHistoryButton.Size = new System.Drawing.Size(73, 33);
+            this.trainingHistoryButton.TabIndex = 5;
+            this.trainingHistoryButton.Text = "История тренировок";
+            this.trainingHistoryButton.UseVisualStyleBackColor = false;
+            this.trainingHistoryButton.Click += new System.EventHandler(this.trainingHistoryButton_Click);
+            // 
             // StudentsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(211)))));
+            this.Controls.Add(this.trainingHistoryButton);
             this.Controls.Add(this.numcardLabel);
             this.Controls.Add(this.dateWillie);
             this.Controls.Add(this.fullNameLabel);
@@ -89,5 +104,6 @@ namespace Willie.CustomControls
         private System.Windows.Forms.Label fullNameLabel;
         private System.Windows.Forms.Label dateWillie;
         private System.Windows.Forms.Label numcardLabel;
+        private System.Windows.Forms.Button trainingHistoryButton;
     }
 }

@@ -54,5 +54,10 @@ namespace Willie.CustomControls
         {
             OpenStudentEditForm();
         }
+
+        private void trainingHistoryButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
