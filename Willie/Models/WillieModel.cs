@@ -1,14 +1,18 @@
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Linq;
 
 namespace Willie.Models
 {
     public partial class WillieModel : DbContext
     {
         public WillieModel()
-            : base("name=WillieModel")
+            : base("name=WillieModel1")
         {
         }
 
+        public virtual DbSet<boxerTypes> boxerTypes { get; set; }
         public virtual DbSet<dominantHand> dominantHand { get; set; }
         public virtual DbSet<gender> gender { get; set; }
         public virtual DbSet<hits> hits { get; set; }

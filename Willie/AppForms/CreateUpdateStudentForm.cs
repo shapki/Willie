@@ -139,7 +139,7 @@ namespace Willie.AppForms
             ValidateGeneral(numcardMaskedTextBox.Text, "Номер карты", "не должно быть пустым..");
         }
 
-        private void Validate()
+        private void ValidateData()
         {
             ValidateStudentName();
             ValidatePhone();
@@ -151,7 +151,7 @@ namespace Willie.AppForms
         {
             try
             {
-                Validate();
+                ValidateData();
             }
             catch (ValidationException ex)
             {

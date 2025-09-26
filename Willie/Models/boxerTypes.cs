@@ -6,13 +6,13 @@ namespace Willie.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class hits
+    public partial class boxerTypes
     {
         [Key]
-        public int idHit { get; set; }
+        public int idBoxer { get; set; }
 
         [Required]
-        [StringLength(250)]
-        public string descriptionHit { get; set; }
+        [StringLength(80)]
+        public string boxerType { get; set; }
     }
 }

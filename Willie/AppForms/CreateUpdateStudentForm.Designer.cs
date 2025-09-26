@@ -41,9 +41,10 @@ namespace Willie.AppForms
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.dateBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.heightNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shapkin_06_WillieDataSet = new Willie.Shapkin_06_WillieDataSet();
+            this.dateBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@ namespace Willie.AppForms
             this.tableAdapterManager = new Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager();
             this.dominantHandTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.dominantHandTableAdapter();
             this.genderTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.genderTableAdapter();
-            this.heightNumericUpDown = new System.Windows.Forms.NumericUpDown();
             dateBirthLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
@@ -71,11 +71,11 @@ namespace Willie.AppForms
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dominantHandBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // dateBirthLabel
@@ -208,13 +208,28 @@ namespace Willie.AppForms
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "ДОБАВЛЕНИЕ СТУДЕНТА";
             // 
-            // dateBirthDateTimePicker
+            // heightNumericUpDown
             // 
-            this.dateBirthDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentsBindingSource, "dateBirth", true));
-            this.dateBirthDateTimePicker.Location = new System.Drawing.Point(135, 12);
-            this.dateBirthDateTimePicker.Name = "dateBirthDateTimePicker";
-            this.dateBirthDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dateBirthDateTimePicker.TabIndex = 17;
+            this.heightNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentsBindingSource, "height", true));
+            this.heightNumericUpDown.Location = new System.Drawing.Point(135, 142);
+            this.heightNumericUpDown.Maximum = new decimal(new int[] {
+            210,
+            0,
+            0,
+            0});
+            this.heightNumericUpDown.Minimum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.heightNumericUpDown.Name = "heightNumericUpDown";
+            this.heightNumericUpDown.Size = new System.Drawing.Size(200, 20);
+            this.heightNumericUpDown.TabIndex = 32;
+            this.heightNumericUpDown.Value = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
             // 
             // studentsBindingSource
             // 
@@ -225,6 +240,14 @@ namespace Willie.AppForms
             // 
             this.shapkin_06_WillieDataSet.DataSetName = "Shapkin_06_WillieDataSet";
             this.shapkin_06_WillieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dateBirthDateTimePicker
+            // 
+            this.dateBirthDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentsBindingSource, "dateBirth", true));
+            this.dateBirthDateTimePicker.Location = new System.Drawing.Point(135, 12);
+            this.dateBirthDateTimePicker.Name = "dateBirthDateTimePicker";
+            this.dateBirthDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dateBirthDateTimePicker.TabIndex = 17;
             // 
             // fullNameTextBox
             // 
@@ -330,29 +353,6 @@ namespace Willie.AppForms
             // 
             this.genderTableAdapter.ClearBeforeFill = true;
             // 
-            // heightNumericUpDown
-            // 
-            this.heightNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentsBindingSource, "height", true));
-            this.heightNumericUpDown.Location = new System.Drawing.Point(135, 142);
-            this.heightNumericUpDown.Maximum = new decimal(new int[] {
-            210,
-            0,
-            0,
-            0});
-            this.heightNumericUpDown.Minimum = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-            this.heightNumericUpDown.Name = "heightNumericUpDown";
-            this.heightNumericUpDown.Size = new System.Drawing.Size(200, 20);
-            this.heightNumericUpDown.TabIndex = 32;
-            this.heightNumericUpDown.Value = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-            // 
             // CreateUpdateStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +361,7 @@ namespace Willie.AppForms
             this.Controls.Add(this.splitContainer);
             this.MinimumSize = new System.Drawing.Size(389, 356);
             this.Name = "CreateUpdateStudentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ВИЛЛИ | ДОБАВЛЕНИЕ СТУДЕНТА";
             this.Load += new System.EventHandler(this.CreateUpdateStudent_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
@@ -370,11 +371,11 @@ namespace Willie.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dominantHandBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
