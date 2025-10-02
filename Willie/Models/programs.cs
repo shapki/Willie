@@ -11,12 +11,16 @@ namespace Willie.Models
         [Key]
         public int idProgram { get; set; }
 
-        [Required]
-        [StringLength(250)]
-        public string typeProgram { get; set; }
+        public int studentOneBoxerId { get; set; }
+
+        public int studentTwoBoxerId { get; set; }
 
         [Required]
         [StringLength(50)]
         public string hits { get; set; }
+
+        public virtual boxerTypes boxerTypes { get; set; }
+
+        public virtual boxerTypes boxerTypes1 { get; set; }
     }
 }

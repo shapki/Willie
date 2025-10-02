@@ -67,7 +67,7 @@ namespace Willie.AppForms
             this.addStudentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(232)))), ((int)(((byte)(211)))));
             this.addStudentButton.Location = new System.Drawing.Point(310, 3);
             this.addStudentButton.Name = "addStudentButton";
-            this.addStudentButton.Size = new System.Drawing.Size(75, 37);
+            this.addStudentButton.Size = new System.Drawing.Size(75, 42);
             this.addStudentButton.TabIndex = 3;
             this.addStudentButton.Text = "Добавить студента";
             this.addStudentButton.UseVisualStyleBackColor = false;

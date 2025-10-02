@@ -42,22 +42,14 @@ namespace Willie.AppForms
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.heightNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shapkin_06_WillieDataSet = new Willie.Shapkin_06_WillieDataSet();
             this.dateBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.numcardMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.dominantHandIdComboBox = new System.Windows.Forms.ComboBox();
-            this.dominantHandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genderIdComboBox = new System.Windows.Forms.ComboBox();
-            this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.saveButton = new System.Windows.Forms.Button();
-            this.studentsTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.studentsTableAdapter();
-            this.tableAdapterManager = new Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager();
-            this.dominantHandTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.dominantHandTableAdapter();
-            this.genderTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.genderTableAdapter();
             dateBirthLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
@@ -72,10 +64,6 @@ namespace Willie.AppForms
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dominantHandBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateBirthLabel
@@ -210,7 +198,6 @@ namespace Willie.AppForms
             // 
             // heightNumericUpDown
             // 
-            this.heightNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentsBindingSource, "height", true));
             this.heightNumericUpDown.Location = new System.Drawing.Point(135, 142);
             this.heightNumericUpDown.Maximum = new decimal(new int[] {
             210,
@@ -231,19 +218,8 @@ namespace Willie.AppForms
             0,
             0});
             // 
-            // studentsBindingSource
-            // 
-            this.studentsBindingSource.DataMember = "students";
-            this.studentsBindingSource.DataSource = this.shapkin_06_WillieDataSet;
-            // 
-            // shapkin_06_WillieDataSet
-            // 
-            this.shapkin_06_WillieDataSet.DataSetName = "Shapkin_06_WillieDataSet";
-            this.shapkin_06_WillieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dateBirthDateTimePicker
             // 
-            this.dateBirthDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.studentsBindingSource, "dateBirth", true));
             this.dateBirthDateTimePicker.Location = new System.Drawing.Point(135, 12);
             this.dateBirthDateTimePicker.Name = "dateBirthDateTimePicker";
             this.dateBirthDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -251,7 +227,6 @@ namespace Willie.AppForms
             // 
             // fullNameTextBox
             // 
-            this.fullNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "fullName", true));
             this.fullNameTextBox.Location = new System.Drawing.Point(135, 38);
             this.fullNameTextBox.Name = "fullNameTextBox";
             this.fullNameTextBox.Size = new System.Drawing.Size(200, 20);
@@ -259,7 +234,6 @@ namespace Willie.AppForms
             // 
             // phoneMaskedTextBox
             // 
-            this.phoneMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "phone", true));
             this.phoneMaskedTextBox.Location = new System.Drawing.Point(135, 64);
             this.phoneMaskedTextBox.Mask = "+0 000 000 00 00";
             this.phoneMaskedTextBox.Name = "phoneMaskedTextBox";
@@ -268,7 +242,6 @@ namespace Willie.AppForms
             // 
             // emailTextBox
             // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "email", true));
             this.emailTextBox.Location = new System.Drawing.Point(135, 90);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(200, 20);
@@ -276,7 +249,6 @@ namespace Willie.AppForms
             // 
             // numcardMaskedTextBox
             // 
-            this.numcardMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "numcard", true));
             this.numcardMaskedTextBox.Location = new System.Drawing.Point(135, 116);
             this.numcardMaskedTextBox.Name = "numcardMaskedTextBox";
             this.numcardMaskedTextBox.Size = new System.Drawing.Size(200, 20);
@@ -284,9 +256,6 @@ namespace Willie.AppForms
             // 
             // dominantHandIdComboBox
             // 
-            this.dominantHandIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "DominantHandId", true));
-            this.dominantHandIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.studentsBindingSource, "DominantHandId", true));
-            this.dominantHandIdComboBox.DataSource = this.dominantHandBindingSource;
             this.dominantHandIdComboBox.DisplayMember = "typeDominantHand";
             this.dominantHandIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dominantHandIdComboBox.FormattingEnabled = true;
@@ -296,16 +265,8 @@ namespace Willie.AppForms
             this.dominantHandIdComboBox.TabIndex = 29;
             this.dominantHandIdComboBox.ValueMember = "idDominantHand";
             // 
-            // dominantHandBindingSource
-            // 
-            this.dominantHandBindingSource.DataMember = "dominantHand";
-            this.dominantHandBindingSource.DataSource = this.shapkin_06_WillieDataSet;
-            // 
             // genderIdComboBox
             // 
-            this.genderIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "genderId", true));
-            this.genderIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.studentsBindingSource, "genderId", true));
-            this.genderIdComboBox.DataSource = this.genderBindingSource;
             this.genderIdComboBox.DisplayMember = "typeGender";
             this.genderIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderIdComboBox.FormattingEnabled = true;
@@ -314,11 +275,6 @@ namespace Willie.AppForms
             this.genderIdComboBox.Size = new System.Drawing.Size(200, 21);
             this.genderIdComboBox.TabIndex = 31;
             this.genderIdComboBox.ValueMember = "idGender";
-            // 
-            // genderBindingSource
-            // 
-            this.genderBindingSource.DataMember = "gender";
-            this.genderBindingSource.DataSource = this.shapkin_06_WillieDataSet;
             // 
             // saveButton
             // 
@@ -330,28 +286,6 @@ namespace Willie.AppForms
             this.saveButton.Text = "Сохранить";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // studentsTableAdapter
-            // 
-            this.studentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.dominantHandTableAdapter = null;
-            this.tableAdapterManager.genderTableAdapter = null;
-            this.tableAdapterManager.hitsTableAdapter = null;
-            this.tableAdapterManager.programsTableAdapter = null;
-            this.tableAdapterManager.studentsTableAdapter = this.studentsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // dominantHandTableAdapter
-            // 
-            this.dominantHandTableAdapter.ClearBeforeFill = true;
-            // 
-            // genderTableAdapter
-            // 
-            this.genderTableAdapter.ClearBeforeFill = true;
             // 
             // CreateUpdateStudentForm
             // 
@@ -372,10 +306,6 @@ namespace Willie.AppForms
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dominantHandBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,10 +315,6 @@ namespace Willie.AppForms
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.PictureBox logoPictureBox;
         private System.Windows.Forms.Label titleLabel;
-        private Shapkin_06_WillieDataSet shapkin_06_WillieDataSet;
-        private System.Windows.Forms.BindingSource studentsBindingSource;
-        private Shapkin_06_WillieDataSetTableAdapters.studentsTableAdapter studentsTableAdapter;
-        private Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DateTimePicker dateBirthDateTimePicker;
         private System.Windows.Forms.TextBox fullNameTextBox;
@@ -397,10 +323,6 @@ namespace Willie.AppForms
         private System.Windows.Forms.MaskedTextBox numcardMaskedTextBox;
         private System.Windows.Forms.ComboBox dominantHandIdComboBox;
         private System.Windows.Forms.ComboBox genderIdComboBox;
-        private System.Windows.Forms.BindingSource dominantHandBindingSource;
-        private Shapkin_06_WillieDataSetTableAdapters.dominantHandTableAdapter dominantHandTableAdapter;
-        private System.Windows.Forms.BindingSource genderBindingSource;
-        private Shapkin_06_WillieDataSetTableAdapters.genderTableAdapter genderTableAdapter;
         private System.Windows.Forms.NumericUpDown heightNumericUpDown;
     }
 }

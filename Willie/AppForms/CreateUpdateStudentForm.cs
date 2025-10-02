@@ -28,6 +28,12 @@ namespace Willie.AppForms
 
         private void CreateUpdateStudent_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet1.gender". При необходимости она может быть перемещена или удалена.
+            this.genderTableAdapter1.Fill(this.shapkin_06_WillieDataSet1.gender);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet1.students". При необходимости она может быть перемещена или удалена.
+            this.studentsTableAdapter1.Fill(this.shapkin_06_WillieDataSet1.students);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet1.dominantHand". При необходимости она может быть перемещена или удалена.
+            this.dominantHandTableAdapter1.Fill(this.shapkin_06_WillieDataSet1.dominantHand);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet.gender". При необходимости она может быть перемещена или удалена.
             this.genderTableAdapter.Fill(this.shapkin_06_WillieDataSet.gender);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet.dominantHand". При необходимости она может быть перемещена или удалена.
