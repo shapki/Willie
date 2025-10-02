@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
-using Willie.Models;
 using Willie.AppForms;
+using Willie.Models;
 
 namespace Willie.CustomControls
 {
@@ -57,7 +56,14 @@ namespace Willie.CustomControls
 
         private void trainingHistoryButton_Click(object sender, EventArgs e)
         {
+            TrainingHistoryForm trainingHistoryForm = new TrainingHistoryForm(_student);
+            DialogResult studentSaved = trainingHistoryForm.ShowDialog();
 
+            if (studentSaved == DialogResult.OK)
+            {
+                MainForm mainForm = (MainForm)this.Parent.Parent.Parent.Parent;
+                mainForm.RefreshStudents();
+            }
         }
     }
 }

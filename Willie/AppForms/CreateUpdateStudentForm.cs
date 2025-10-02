@@ -28,16 +28,10 @@ namespace Willie.AppForms
 
         private void CreateUpdateStudent_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet1.gender". При необходимости она может быть перемещена или удалена.
-            this.genderTableAdapter1.Fill(this.shapkin_06_WillieDataSet1.gender);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet1.students". При необходимости она может быть перемещена или удалена.
-            this.studentsTableAdapter1.Fill(this.shapkin_06_WillieDataSet1.students);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet1.dominantHand". При необходимости она может быть перемещена или удалена.
-            this.dominantHandTableAdapter1.Fill(this.shapkin_06_WillieDataSet1.dominantHand);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet.gender". При необходимости она может быть перемещена или удалена.
-            this.genderTableAdapter.Fill(this.shapkin_06_WillieDataSet.gender);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet.dominantHand". При необходимости она может быть перемещена или удалена.
             this.dominantHandTableAdapter.Fill(this.shapkin_06_WillieDataSet.dominantHand);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "shapkin_06_WillieDataSet.gender". При необходимости она может быть перемещена или удалена.
+            this.genderTableAdapter.Fill(this.shapkin_06_WillieDataSet.gender);
 
             if (!_student.isNew())
             {
@@ -142,7 +136,7 @@ namespace Willie.AppForms
 
         private void ValidateNumCard()
         {
-            ValidateGeneral(numcardMaskedTextBox.Text, "Номер карты", "не должно быть пустым..");
+            ValidateGeneral(numcardTextBox.Text, "Номер карты", "не должно быть пустым..");
         }
 
         private void ValidateData()
@@ -196,10 +190,18 @@ namespace Willie.AppForms
             _student.fullName = fullNameTextBox.Text;
             _student.phone = phoneMaskedTextBox.Text;
             _student.email = emailTextBox.Text;
-            _student.numcard = numcardMaskedTextBox.Text;
+            _student.numcard = numcardTextBox.Text;
             _student.height = (int)heightNumericUpDown.Value;
             _student.DominantHandId = (int)dominantHandIdComboBox.SelectedValue;
             _student.genderId = (int)genderIdComboBox.SelectedValue; // Не удалось привести тип объекта "System.Int32" к типу "Willie.Models.gender"
+        }
+
+        private void studentsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.studentsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.shapkin_06_WillieDataSet);
+
         }
     }
 }

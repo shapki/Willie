@@ -83,10 +83,11 @@
     <Compile Include="Models\programs.cs" />
     <Compile Include="Models\students.cs" />
     <Compile Include="Models\sysdiagrams.cs" />
+    <Compile Include="Models\trainingHistory.cs" />
     <Compile Include="Models\WillieModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\HistoryAddUpdate.cs" />
+    <Compile Include="Services\TrainingHistoryManager.cs" />
     <Compile Include="Shapkin_06_WillieDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
