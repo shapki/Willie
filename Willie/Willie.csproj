@@ -70,6 +70,12 @@
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\CreateUpdateTrainingHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\CreateUpdateTrainingHistoryForm.Designer.cs">
+      <DependentUpon>CreateUpdateTrainingHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\TrainingHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\CreateUpdateTrainingHistoryForm.resx">
+      <DependentUpon>CreateUpdateTrainingHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\TrainingHistoryForm.resx">
       <DependentUpon>TrainingHistoryForm.cs</DependentUpon>

@@ -41,23 +41,23 @@ namespace Willie.AppForms
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.shapkin_06_WillieDataSet = new Willie.Shapkin_06_WillieDataSet();
-            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentsTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.studentsTableAdapter();
-            this.tableAdapterManager = new Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager();
             this.dateBirthDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shapkin_06_WillieDataSet = new Willie.Shapkin_06_WillieDataSet();
             this.fullNameTextBox = new System.Windows.Forms.TextBox();
             this.phoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.numcardTextBox = new System.Windows.Forms.TextBox();
             this.heightNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.dominantHandIdComboBox = new System.Windows.Forms.ComboBox();
+            this.dominantHandBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genderIdComboBox = new System.Windows.Forms.ComboBox();
             this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.genderTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.genderTableAdapter();
-            this.dominantHandBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.saveButton = new System.Windows.Forms.Button();
+            this.studentsTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.studentsTableAdapter();
+            this.tableAdapterManager = new Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager();
             this.dominantHandTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.dominantHandTableAdapter();
+            this.genderTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.genderTableAdapter();
             dateBirthLabel = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
             phoneLabel = new System.Windows.Forms.Label();
@@ -71,12 +71,84 @@ namespace Willie.AppForms
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dominantHandBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dateBirthLabel
+            // 
+            dateBirthLabel.AutoSize = true;
+            dateBirthLabel.Location = new System.Drawing.Point(33, 23);
+            dateBirthLabel.Name = "dateBirthLabel";
+            dateBirthLabel.Size = new System.Drawing.Size(86, 13);
+            dateBirthLabel.TabIndex = 32;
+            dateBirthLabel.Text = "Дата рождения";
+            // 
+            // fullNameLabel
+            // 
+            fullNameLabel.AutoSize = true;
+            fullNameLabel.Location = new System.Drawing.Point(33, 48);
+            fullNameLabel.Name = "fullNameLabel";
+            fullNameLabel.Size = new System.Drawing.Size(34, 13);
+            fullNameLabel.TabIndex = 34;
+            fullNameLabel.Text = "ФИО";
+            // 
+            // phoneLabel
+            // 
+            phoneLabel.AutoSize = true;
+            phoneLabel.Location = new System.Drawing.Point(33, 74);
+            phoneLabel.Name = "phoneLabel";
+            phoneLabel.Size = new System.Drawing.Size(52, 13);
+            phoneLabel.TabIndex = 36;
+            phoneLabel.Text = "Телефон";
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(33, 100);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(37, 13);
+            emailLabel.TabIndex = 38;
+            emailLabel.Text = "Почта";
+            // 
+            // numcardLabel
+            // 
+            numcardLabel.AutoSize = true;
+            numcardLabel.Location = new System.Drawing.Point(33, 126);
+            numcardLabel.Name = "numcardLabel";
+            numcardLabel.Size = new System.Drawing.Size(75, 13);
+            numcardLabel.TabIndex = 40;
+            numcardLabel.Text = "Номер карты";
+            // 
+            // heightLabel
+            // 
+            heightLabel.AutoSize = true;
+            heightLabel.Location = new System.Drawing.Point(33, 149);
+            heightLabel.Name = "heightLabel";
+            heightLabel.Size = new System.Drawing.Size(31, 13);
+            heightLabel.TabIndex = 42;
+            heightLabel.Text = "Рост";
+            // 
+            // dominantHandIdLabel
+            // 
+            dominantHandIdLabel.AutoSize = true;
+            dominantHandIdLabel.Location = new System.Drawing.Point(33, 178);
+            dominantHandIdLabel.Name = "dominantHandIdLabel";
+            dominantHandIdLabel.Size = new System.Drawing.Size(78, 13);
+            dominantHandIdLabel.TabIndex = 44;
+            dominantHandIdLabel.Text = "Ведущая рука";
+            // 
+            // genderIdLabel
+            // 
+            genderIdLabel.AutoSize = true;
+            genderIdLabel.Location = new System.Drawing.Point(33, 205);
+            genderIdLabel.Name = "genderIdLabel";
+            genderIdLabel.Size = new System.Drawing.Size(27, 13);
+            genderIdLabel.TabIndex = 46;
+            genderIdLabel.Text = "Пол";
             // 
             // splitContainer
             // 
@@ -130,57 +202,11 @@ namespace Willie.AppForms
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.titleLabel.Location = new System.Drawing.Point(57, 11);
+            this.titleLabel.Location = new System.Drawing.Point(57, 4);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(278, 25);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "ДОБАВЛЕНИЕ СТУДЕНТА";
-            // 
-            // saveButton
-            // 
-            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.saveButton.Location = new System.Drawing.Point(36, 230);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(299, 23);
-            this.saveButton.TabIndex = 16;
-            this.saveButton.Text = "Сохранить";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // shapkin_06_WillieDataSet
-            // 
-            this.shapkin_06_WillieDataSet.DataSetName = "Shapkin_06_WillieDataSet";
-            this.shapkin_06_WillieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentsBindingSource
-            // 
-            this.studentsBindingSource.DataMember = "students";
-            this.studentsBindingSource.DataSource = this.shapkin_06_WillieDataSet;
-            // 
-            // studentsTableAdapter
-            // 
-            this.studentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.boxerTypesTableAdapter = null;
-            this.tableAdapterManager.dominantHandTableAdapter = this.dominantHandTableAdapter;
-            this.tableAdapterManager.genderTableAdapter = this.genderTableAdapter;
-            this.tableAdapterManager.hitsTableAdapter = null;
-            this.tableAdapterManager.programsTableAdapter = null;
-            this.tableAdapterManager.studentsTableAdapter = this.studentsTableAdapter;
-            this.tableAdapterManager.trainingHistoryTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // dateBirthLabel
-            // 
-            dateBirthLabel.AutoSize = true;
-            dateBirthLabel.Location = new System.Drawing.Point(33, 23);
-            dateBirthLabel.Name = "dateBirthLabel";
-            dateBirthLabel.Size = new System.Drawing.Size(86, 13);
-            dateBirthLabel.TabIndex = 32;
-            dateBirthLabel.Text = "Дата рождения";
             // 
             // dateBirthDateTimePicker
             // 
@@ -190,14 +216,15 @@ namespace Willie.AppForms
             this.dateBirthDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateBirthDateTimePicker.TabIndex = 33;
             // 
-            // fullNameLabel
+            // studentsBindingSource
             // 
-            fullNameLabel.AutoSize = true;
-            fullNameLabel.Location = new System.Drawing.Point(33, 48);
-            fullNameLabel.Name = "fullNameLabel";
-            fullNameLabel.Size = new System.Drawing.Size(34, 13);
-            fullNameLabel.TabIndex = 34;
-            fullNameLabel.Text = "ФИО";
+            this.studentsBindingSource.DataMember = "students";
+            this.studentsBindingSource.DataSource = this.shapkin_06_WillieDataSet;
+            // 
+            // shapkin_06_WillieDataSet
+            // 
+            this.shapkin_06_WillieDataSet.DataSetName = "Shapkin_06_WillieDataSet";
+            this.shapkin_06_WillieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fullNameTextBox
             // 
@@ -206,15 +233,6 @@ namespace Willie.AppForms
             this.fullNameTextBox.Name = "fullNameTextBox";
             this.fullNameTextBox.Size = new System.Drawing.Size(200, 20);
             this.fullNameTextBox.TabIndex = 35;
-            // 
-            // phoneLabel
-            // 
-            phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(33, 74);
-            phoneLabel.Name = "phoneLabel";
-            phoneLabel.Size = new System.Drawing.Size(52, 13);
-            phoneLabel.TabIndex = 36;
-            phoneLabel.Text = "Телефон";
             // 
             // phoneMaskedTextBox
             // 
@@ -225,15 +243,6 @@ namespace Willie.AppForms
             this.phoneMaskedTextBox.Size = new System.Drawing.Size(200, 20);
             this.phoneMaskedTextBox.TabIndex = 37;
             // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(33, 100);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(37, 13);
-            emailLabel.TabIndex = 38;
-            emailLabel.Text = "Почта";
-            // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "email", true));
@@ -242,15 +251,6 @@ namespace Willie.AppForms
             this.emailTextBox.Size = new System.Drawing.Size(200, 20);
             this.emailTextBox.TabIndex = 39;
             // 
-            // numcardLabel
-            // 
-            numcardLabel.AutoSize = true;
-            numcardLabel.Location = new System.Drawing.Point(33, 126);
-            numcardLabel.Name = "numcardLabel";
-            numcardLabel.Size = new System.Drawing.Size(75, 13);
-            numcardLabel.TabIndex = 40;
-            numcardLabel.Text = "Номер карты";
-            // 
             // numcardTextBox
             // 
             this.numcardTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "numcard", true));
@@ -258,15 +258,6 @@ namespace Willie.AppForms
             this.numcardTextBox.Name = "numcardTextBox";
             this.numcardTextBox.Size = new System.Drawing.Size(200, 20);
             this.numcardTextBox.TabIndex = 41;
-            // 
-            // heightLabel
-            // 
-            heightLabel.AutoSize = true;
-            heightLabel.Location = new System.Drawing.Point(33, 149);
-            heightLabel.Name = "heightLabel";
-            heightLabel.Size = new System.Drawing.Size(31, 13);
-            heightLabel.TabIndex = 42;
-            heightLabel.Text = "Рост";
             // 
             // heightNumericUpDown
             // 
@@ -291,15 +282,6 @@ namespace Willie.AppForms
             0,
             0});
             // 
-            // dominantHandIdLabel
-            // 
-            dominantHandIdLabel.AutoSize = true;
-            dominantHandIdLabel.Location = new System.Drawing.Point(33, 178);
-            dominantHandIdLabel.Name = "dominantHandIdLabel";
-            dominantHandIdLabel.Size = new System.Drawing.Size(78, 13);
-            dominantHandIdLabel.TabIndex = 44;
-            dominantHandIdLabel.Text = "Ведущая рука";
-            // 
             // dominantHandIdComboBox
             // 
             this.dominantHandIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentsBindingSource, "DominantHandId", true));
@@ -314,14 +296,10 @@ namespace Willie.AppForms
             this.dominantHandIdComboBox.TabIndex = 45;
             this.dominantHandIdComboBox.ValueMember = "idDominantHand";
             // 
-            // genderIdLabel
+            // dominantHandBindingSource
             // 
-            genderIdLabel.AutoSize = true;
-            genderIdLabel.Location = new System.Drawing.Point(33, 205);
-            genderIdLabel.Name = "genderIdLabel";
-            genderIdLabel.Size = new System.Drawing.Size(27, 13);
-            genderIdLabel.TabIndex = 46;
-            genderIdLabel.Text = "Пол";
+            this.dominantHandBindingSource.DataMember = "dominantHand";
+            this.dominantHandBindingSource.DataSource = this.shapkin_06_WillieDataSet;
             // 
             // genderIdComboBox
             // 
@@ -342,18 +320,40 @@ namespace Willie.AppForms
             this.genderBindingSource.DataMember = "gender";
             this.genderBindingSource.DataSource = this.shapkin_06_WillieDataSet;
             // 
-            // genderTableAdapter
+            // saveButton
             // 
-            this.genderTableAdapter.ClearBeforeFill = true;
+            this.saveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.saveButton.Location = new System.Drawing.Point(36, 230);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(299, 23);
+            this.saveButton.TabIndex = 16;
+            this.saveButton.Text = "Сохранить";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // dominantHandBindingSource
+            // studentsTableAdapter
             // 
-            this.dominantHandBindingSource.DataMember = "dominantHand";
-            this.dominantHandBindingSource.DataSource = this.shapkin_06_WillieDataSet;
+            this.studentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.boxerTypesTableAdapter = null;
+            this.tableAdapterManager.dominantHandTableAdapter = this.dominantHandTableAdapter;
+            this.tableAdapterManager.genderTableAdapter = this.genderTableAdapter;
+            this.tableAdapterManager.hitsTableAdapter = null;
+            this.tableAdapterManager.programsTableAdapter = null;
+            this.tableAdapterManager.studentsTableAdapter = this.studentsTableAdapter;
+            this.tableAdapterManager.trainingHistoryTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Willie.Shapkin_06_WillieDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dominantHandTableAdapter
             // 
             this.dominantHandTableAdapter.ClearBeforeFill = true;
+            // 
+            // genderTableAdapter
+            // 
+            this.genderTableAdapter.ClearBeforeFill = true;
             // 
             // CreateUpdateStudentForm
             // 
@@ -373,11 +373,11 @@ namespace Willie.AppForms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shapkin_06_WillieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dominantHandBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
