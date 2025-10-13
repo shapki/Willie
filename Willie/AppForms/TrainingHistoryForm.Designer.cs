@@ -81,13 +81,14 @@ namespace Willie.AppForms
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.flowLayoutPanel);
-            this.splitContainer.Size = new System.Drawing.Size(800, 450);
+            this.splitContainer.Size = new System.Drawing.Size(803, 450);
             this.splitContainer.SplitterDistance = 48;
             this.splitContainer.TabIndex = 1;
             // 
             // trainingHistorySave
             // 
             this.trainingHistorySave.BackColor = System.Drawing.Color.Red;
+            this.trainingHistorySave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.trainingHistorySave.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.trainingHistorySave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.trainingHistorySave.Location = new System.Drawing.Point(724, 3);
@@ -127,7 +128,7 @@ namespace Willie.AppForms
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(800, 398);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(803, 398);
             this.flowLayoutPanel.TabIndex = 0;
             // 
             // dataGridView1
@@ -146,6 +147,10 @@ namespace Willie.AppForms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(794, 392);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dataGridView1_CellParsing);
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -239,6 +244,8 @@ namespace Willie.AppForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "TrainingHistoryForm";
             this.Text = "ВИЛЛИ | ИСТОРИЯ ТРЕНИРОВОК";
             this.Load += new System.EventHandler(this.TrainingHistoryForm_Load);
