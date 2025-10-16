@@ -59,7 +59,8 @@
             if (training.studentOneId <= 0)
                 return "Необходимо указать студента";
 
-            if (!_context.students.Any(s => s.idStudent == training.studentOneId))
+            var student = _context.students.FirstOrDefault(s => s.idStudent == training.studentOneId);
+            if (student == null)
                 return "Выбранный студент не существует";
 
             if (training.studentTwoBoxerId <= 0)
@@ -71,8 +72,15 @@
             if (training.programId <= 0)
                 return "Необходимо выбрать программу";
 
-            if (!_context.programs.Any(p => p.idProgram == training.programId))
+            var program = _context.programs.FirstOrDefault(p => p.idProgram == training.programId);
+            if (program == null)
                 return "Выбранная программа не существует";
+
+            int actualStudentOneBoxerId = GetBoxerType(student);
+            if (program.studentOneBoxerId != actualStudentOneBoxerId || program.studentTwoBoxerId != training.studentTwoBoxerId)
+            {
+                return "Выбранная программа не соответствует типам боксеров";
+            }
 
             if (training.date == DateTime.MinValue)
                 return "Необходимо указать дату";
@@ -84,6 +92,37 @@
                 return "Комментарий не может превышать 500 символов";
 
             return null;
+        }
+
+        public int GetBoxerType(students student)
+        {
+            var gender = _context.gender.FirstOrDefault(g => g.idGender == student.genderId);
+            bool isMale = gender?.typeGender == "муж" || student.genderId == 1;
+            
+            if (isMale)
+            {
+                if (student.height >= 185)
+                    return 1; // Высокий муж
+                else if (student.height >= 175)
+                    return 2; // Средний муж
+                else
+                    return 3; // Низкий муж
+            }
+            else
+            {
+                if (student.height >= 170)
+                    return 4; // Высокая жен
+                else if (student.height >= 160)
+                    return 5; // Средняя жен
+                else
+                    return 6; // Низкая жен
+            }
+        }
+
+        public IQueryable<programs> GetAvailablePrograms(int studentOneBoxerId, int studentTwoBoxerId)
+        {
+            return _context.programs
+                .Where(p => p.studentOneBoxerId == studentOneBoxerId && p.studentTwoBoxerId == studentTwoBoxerId);
         }
     }
 }

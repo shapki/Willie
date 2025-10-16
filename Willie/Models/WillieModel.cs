@@ -4,6 +4,7 @@ namespace Willie.Models
 {
     public partial class WillieModel : DbContext
     {
+
         public WillieModel()
             : base("name=WillieModel")
         {

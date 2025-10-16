@@ -181,6 +181,25 @@ namespace Willie.AppForms
                     e.FormattingApplied = true;
                 }
             }
+
+            else if (e.ColumnIndex == dataGridView1.Columns["programIdDataGridViewTextBoxColumn"].Index)
+            {
+                if (e.Value != null && int.TryParse(e.Value.ToString(), out int programId))
+                {
+                    var program = _context.programs.FirstOrDefault(p => p.idProgram == programId);
+                    if (program != null)
+                    {
+                        var studentOneType = _context.boxerTypes.FirstOrDefault(b => b.idBoxer == program.studentOneBoxerId);
+                        var studentTwoType = _context.boxerTypes.FirstOrDefault(b => b.idBoxer == program.studentTwoBoxerId);
+
+                        string studentOneName = studentOneType?.boxerType ?? "Неизвестно";
+                        string studentTwoName = studentTwoType?.boxerType ?? "Неизвестно";
+
+                        e.Value = $"{studentOneName} - {studentTwoName} ({program.hits} уд.)";
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
         }
 
         private void dataGridView1_CellParsing(object sender, DataGridViewCellParsingEventArgs e)
@@ -216,6 +235,57 @@ namespace Willie.AppForms
             if (result != DialogResult.Yes)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["studentTwoBoxerIdDataGridViewTextBoxColumn"].Index)
+            {
+                UpdateProgramsForRow(e.RowIndex);
+            }
+        }
+
+        private void UpdateProgramsForRow(int rowIndex)
+        {
+            var row = dataGridView1.Rows[rowIndex];
+            if (row.IsNewRow) return;
+
+            var studentTwoBoxerCell = row.Cells["studentTwoBoxerIdDataGridViewTextBoxColumn"];
+            var programCell = row.Cells["programIdDataGridViewTextBoxColumn"] as DataGridViewComboBoxCell;
+
+            if (studentTwoBoxerCell.Value != null && programCell != null)
+            {
+                int studentTwoBoxerId = Convert.ToInt32(studentTwoBoxerCell.Value);
+
+                int studentOneBoxerId = _historyManager.GetBoxerType(_student);
+
+                var availablePrograms = _context.programs
+                    .Where(p => p.studentOneBoxerId == studentOneBoxerId && p.studentTwoBoxerId == studentTwoBoxerId)
+                    .ToList();
+
+                programCell.DataSource = availablePrograms;
+                programCell.DisplayMember = "hits";
+                programCell.ValueMember = "idProgram";
+
+                if (availablePrograms.Count == 1)
+                {
+                    programCell.Value = availablePrograms[0].idProgram;
+                }
+                else if (availablePrograms.Count == 0)
+                {
+                    programCell.Value = null;
+                    MessageBox.Show("Для выбранной комбинации типов боксеров нет доступных программ", "Информация",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                UpdateProgramsForRow(e.RowIndex);
             }
         }
     }
