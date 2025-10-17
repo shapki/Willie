@@ -131,6 +131,7 @@
       <DependentUpon>StudentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Documents\er-diagram.pdf" />
+    <None Include="Documents\Алгоритм расчета безопасного количества калорий.vsd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
