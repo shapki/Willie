@@ -11,6 +11,7 @@ namespace Willie.AppForms
         private students _student;
         private TrainingHistoryManager _historyManager;
         private WillieModel _context;
+        private bool _isLoadingData = true;
 
         public TrainingHistoryForm(students student)
         {
@@ -25,8 +26,10 @@ namespace Willie.AppForms
 
         private void TrainingHistoryForm_Load(object sender, System.EventArgs e)
         {
+            _isLoadingData = true;
             LoadData();
             ConfigureDataGridView();
+            _isLoadingData = false;
         }
 
         private void LoadData()
@@ -65,6 +68,11 @@ namespace Willie.AppForms
             {
                 e.Row.Cells["studentOneIdDataGridViewTextBoxColumn"].Value = _student.idStudent;
                 e.Row.Cells["dateDataGridViewTextBoxColumn"].Value = DateTime.Today;
+            };
+
+            dataGridView1.DataBindingComplete += (s, e) =>
+            {
+                _isLoadingData = false;
             };
         }
 
@@ -240,7 +248,8 @@ namespace Willie.AppForms
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["studentTwoBoxerIdDataGridViewTextBoxColumn"].Index)
+            if (_isLoadingData || e.RowIndex < 0) return;
+            if (e.ColumnIndex == dataGridView1.Columns["studentTwoBoxerIdDataGridViewTextBoxColumn"].Index)
             {
                 UpdateProgramsForRow(e.RowIndex);
             }
@@ -248,6 +257,8 @@ namespace Willie.AppForms
 
         private void UpdateProgramsForRow(int rowIndex)
         {
+            if (_isLoadingData) return;
+
             var row = dataGridView1.Rows[rowIndex];
             if (row.IsNewRow) return;
 
@@ -264,13 +275,18 @@ namespace Willie.AppForms
                     .Where(p => p.studentOneBoxerId == studentOneBoxerId && p.studentTwoBoxerId == studentTwoBoxerId)
                     .ToList();
 
+                programCell.DataSource = null;
                 programCell.DataSource = availablePrograms;
                 programCell.DisplayMember = "hits";
                 programCell.ValueMember = "idProgram";
 
                 if (availablePrograms.Count == 1)
                 {
-                    programCell.Value = availablePrograms[0].idProgram;
+                    var currentValue = programCell.Value;
+                    if (currentValue == null || Convert.ToInt32(currentValue) != availablePrograms[0].idProgram)
+                    {
+                        programCell.Value = availablePrograms[0].idProgram;
+                    }
                 }
                 else if (availablePrograms.Count == 0)
                 {
@@ -283,7 +299,7 @@ namespace Willie.AppForms
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (!_isLoadingData && e.RowIndex >= 0)
             {
                 UpdateProgramsForRow(e.RowIndex);
             }

@@ -96,9 +96,13 @@
 
         public int GetBoxerType(students student)
         {
-            var gender = _context.gender.FirstOrDefault(g => g.idGender == student.genderId);
-            bool isMale = gender?.typeGender == "муж" || student.genderId == 1;
-            
+            bool isMale = student.genderId == 1; // 1 - муж, 2 - жен
+
+            return GetBoxerTypeId(student, isMale);
+        }
+
+        public int GetBoxerTypeId(students student, bool isMale)
+        {
             if (isMale)
             {
                 if (student.height >= 185)
