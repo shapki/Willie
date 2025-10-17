@@ -9,7 +9,6 @@ namespace Willie.AppForms
 {
     public partial class MainForm : Form
     {
-        public static MainForm Control { get; internal set; }
 
         public MainForm()
         {

@@ -42,7 +42,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -69,12 +71,6 @@
     </Compile>
     <Compile Include="AppForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppForms\CreateUpdateTrainingHistoryForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppForms\CreateUpdateTrainingHistoryForm.Designer.cs">
-      <DependentUpon>CreateUpdateTrainingHistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\TrainingHistoryForm.cs">
       <SubType>Form</SubType>
@@ -110,9 +106,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppForms\CreateUpdateTrainingHistoryForm.resx">
-      <DependentUpon>CreateUpdateTrainingHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\TrainingHistoryForm.resx">
       <DependentUpon>TrainingHistoryForm.cs</DependentUpon>
