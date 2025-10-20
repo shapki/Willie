@@ -251,11 +251,11 @@ namespace Willie.AppForms
             if (_isLoadingData || e.RowIndex < 0) return;
             if (e.ColumnIndex == dataGridView1.Columns["studentTwoBoxerIdDataGridViewTextBoxColumn"].Index)
             {
-                UpdateProgramsForRow(e.RowIndex);
+                UpdateProgramsForRow(e.RowIndex, true);
             }
         }
 
-        private void UpdateProgramsForRow(int rowIndex)
+        private void UpdateProgramsForRow(int rowIndex, bool secondStudentTypeValChanged)
         {
             if (_isLoadingData) return;
 
@@ -280,16 +280,22 @@ namespace Willie.AppForms
                 programCell.DisplayMember = "hits";
                 programCell.ValueMember = "idProgram";
 
-                if (availablePrograms.Count == 1)
+                if (secondStudentTypeValChanged == true)
                 {
+                    programCell.ReadOnly = true;
+                }
+                if (availablePrograms.Count == 1 && secondStudentTypeValChanged)
+                {
+                    programCell.ReadOnly = false;
                     var currentValue = programCell.Value;
                     if (currentValue == null || Convert.ToInt32(currentValue) != availablePrograms[0].idProgram)
                     {
                         programCell.Value = availablePrograms[0].idProgram;
                     }
                 }
-                else if (availablePrograms.Count == 0)
+                else if (availablePrograms.Count == 0 && secondStudentTypeValChanged)
                 {
+                    programCell.ReadOnly = false;
                     programCell.Value = null;
                     MessageBox.Show("Для выбранной комбинации типов боксеров нет доступных программ", "Информация",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -301,7 +307,7 @@ namespace Willie.AppForms
         {
             if (!_isLoadingData && e.RowIndex >= 0)
             {
-                UpdateProgramsForRow(e.RowIndex);
+                UpdateProgramsForRow(e.RowIndex, false);
             }
         }
     }
