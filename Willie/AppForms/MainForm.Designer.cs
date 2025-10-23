@@ -29,6 +29,7 @@ namespace Willie.AppForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.addStudentButton = new System.Windows.Forms.Button();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
@@ -111,6 +112,7 @@ namespace Willie.AppForms
             this.ClientSize = new System.Drawing.Size(580, 450);
             this.Controls.Add(this.splitContainer);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(596, 489);
             this.Name = "MainForm";
             this.Text = "ВИЛЛИ | СПИСОК СТУДЕНТОВ";

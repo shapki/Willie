@@ -30,26 +30,27 @@ namespace Willie.AppForms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainingHistoryForm));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.trainingHistorySave = new System.Windows.Forms.Button();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentOneIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shapkin_06_WillieDataSet = new Willie.Shapkin_06_WillieDataSet();
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.boxerTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.programsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trainingHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programsTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.programsTableAdapter();
             this.studentsTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.studentsTableAdapter();
             this.boxerTypesTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.boxerTypesTableAdapter();
             this.trainingHistoryTableAdapter = new Willie.Shapkin_06_WillieDataSetTableAdapters.trainingHistoryTableAdapter();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentOneIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.programIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -154,6 +155,23 @@ namespace Willie.AppForms
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
             // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // studentOneIdDataGridViewTextBoxColumn
+            // 
+            this.studentOneIdDataGridViewTextBoxColumn.DataPropertyName = "studentOneId";
+            this.studentOneIdDataGridViewTextBoxColumn.DataSource = this.studentsBindingSource;
+            this.studentOneIdDataGridViewTextBoxColumn.DisplayMember = "fullName";
+            this.studentOneIdDataGridViewTextBoxColumn.HeaderText = "Студент";
+            this.studentOneIdDataGridViewTextBoxColumn.Name = "studentOneIdDataGridViewTextBoxColumn";
+            this.studentOneIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentOneIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.studentOneIdDataGridViewTextBoxColumn.ValueMember = "idStudent";
+            // 
             // studentsBindingSource
             // 
             this.studentsBindingSource.DataMember = "students";
@@ -164,15 +182,44 @@ namespace Willie.AppForms
             this.shapkin_06_WillieDataSet.DataSetName = "Shapkin_06_WillieDataSet";
             this.shapkin_06_WillieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // studentTwoBoxerIdDataGridViewTextBoxColumn
+            // 
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.DataPropertyName = "studentTwoBoxerId";
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.DataSource = this.boxerTypesBindingSource;
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.DisplayMember = "boxerType";
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.HeaderText = "Тип 2го студента";
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.Name = "studentTwoBoxerIdDataGridViewTextBoxColumn";
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.studentTwoBoxerIdDataGridViewTextBoxColumn.ValueMember = "idBoxer";
+            // 
             // boxerTypesBindingSource
             // 
             this.boxerTypesBindingSource.DataMember = "boxerTypes";
             this.boxerTypesBindingSource.DataSource = this.shapkin_06_WillieDataSet;
             // 
+            // programIdDataGridViewTextBoxColumn
+            // 
+            this.programIdDataGridViewTextBoxColumn.DataPropertyName = "programId";
+            this.programIdDataGridViewTextBoxColumn.DataSource = this.programsBindingSource;
+            this.programIdDataGridViewTextBoxColumn.DisplayMember = "hits";
+            this.programIdDataGridViewTextBoxColumn.HeaderText = "Тип программы";
+            this.programIdDataGridViewTextBoxColumn.Name = "programIdDataGridViewTextBoxColumn";
+            this.programIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.programIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.programIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.programIdDataGridViewTextBoxColumn.ValueMember = "idProgram";
+            // 
             // programsBindingSource
             // 
             this.programsBindingSource.DataMember = "programs";
             this.programsBindingSource.DataSource = this.shapkin_06_WillieDataSet;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
             // 
             // trainingHistoryBindingSource
             // 
@@ -195,58 +242,13 @@ namespace Willie.AppForms
             // 
             this.trainingHistoryTableAdapter.ClearBeforeFill = true;
             // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // studentOneIdDataGridViewTextBoxColumn
-            // 
-            this.studentOneIdDataGridViewTextBoxColumn.DataPropertyName = "studentOneId";
-            this.studentOneIdDataGridViewTextBoxColumn.DataSource = this.studentsBindingSource;
-            this.studentOneIdDataGridViewTextBoxColumn.DisplayMember = "fullName";
-            this.studentOneIdDataGridViewTextBoxColumn.HeaderText = "Студент";
-            this.studentOneIdDataGridViewTextBoxColumn.Name = "studentOneIdDataGridViewTextBoxColumn";
-            this.studentOneIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentOneIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.studentOneIdDataGridViewTextBoxColumn.ValueMember = "idStudent";
-            // 
-            // studentTwoBoxerIdDataGridViewTextBoxColumn
-            // 
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.DataPropertyName = "studentTwoBoxerId";
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.DataSource = this.boxerTypesBindingSource;
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.DisplayMember = "boxerType";
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.HeaderText = "Тип 2го студента";
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.Name = "studentTwoBoxerIdDataGridViewTextBoxColumn";
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.studentTwoBoxerIdDataGridViewTextBoxColumn.ValueMember = "idBoxer";
-            // 
-            // programIdDataGridViewTextBoxColumn
-            // 
-            this.programIdDataGridViewTextBoxColumn.DataPropertyName = "programId";
-            this.programIdDataGridViewTextBoxColumn.DataSource = this.programsBindingSource;
-            this.programIdDataGridViewTextBoxColumn.DisplayMember = "hits";
-            this.programIdDataGridViewTextBoxColumn.HeaderText = "Тип программы";
-            this.programIdDataGridViewTextBoxColumn.Name = "programIdDataGridViewTextBoxColumn";
-            this.programIdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.programIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.programIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.programIdDataGridViewTextBoxColumn.ValueMember = "idProgram";
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Комментарий";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
             // TrainingHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(816, 489);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "TrainingHistoryForm";
