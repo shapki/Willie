@@ -46,10 +46,8 @@ namespace Willie.AppForms
             // PKGH            
             // Подготовка введенной пользователем информации
             // о телефоне для сохранения в БД.
-
-            string trimmedPhone = phoneMaskedTextBox.Text.Replace("+", "");
-            trimmedPhone = trimmedPhone.Replace(" ", "");
-            return trimmedPhone;
+            string sanitizedPhone = Regex.Replace(phoneMaskedTextBox.Text, @"\D", "");
+            return sanitizedPhone;
         }
 
         /// <summary>
@@ -89,17 +87,10 @@ namespace Willie.AppForms
 
             try
             {
-                // Normalize the domain
-                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
-                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
-
-                // Examines the domain part of the email and normalizes it.
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper, RegexOptions.None, TimeSpan.FromMilliseconds(200));
                 string DomainMapper(Match match)
                 {
-                    // Use IdnMapping class to convert Unicode domain names.
                     var idn = new IdnMapping();
-
-                    // Pull out and process domain name (throws ArgumentException on invalid)
                     string domainName = idn.GetAscii(match.Groups[2].Value);
 
                     return match.Groups[1].Value + domainName;
@@ -116,9 +107,7 @@ namespace Willie.AppForms
 
             try
             {
-                return Regex.IsMatch(email,
-                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+                return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
             }
             catch (RegexMatchTimeoutException)
             {
@@ -128,7 +117,10 @@ namespace Willie.AppForms
 
         private void ValidateEmail()
         {
-            if (!IsValidEmail(emailTextBox.Text.Trim()))
+            string email = emailTextBox.Text.Trim();
+            if (string.IsNullOrWhiteSpace(email))
+                return;
+            if (!IsValidEmail(email))
             {
                 throw new ValidationException("Неверный формат электронной почты");
             }

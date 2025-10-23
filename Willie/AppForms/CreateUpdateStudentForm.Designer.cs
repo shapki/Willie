@@ -38,6 +38,7 @@ namespace Willie.AppForms
             System.Windows.Forms.Label heightLabel;
             System.Windows.Forms.Label dominantHandIdLabel;
             System.Windows.Forms.Label genderIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUpdateStudentForm));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -361,6 +362,7 @@ namespace Willie.AppForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 317);
             this.Controls.Add(this.splitContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(389, 356);
             this.Name = "CreateUpdateStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

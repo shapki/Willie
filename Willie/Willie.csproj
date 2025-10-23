@@ -125,6 +125,7 @@
     </EmbeddedResource>
     <None Include="Documents\er-diagram.pdf" />
     <None Include="Documents\Алгоритм расчета безопасного количества калорий.vsd" />
+    <None Include="Documents\Метод добавления в историю тренировок.vsd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
